@@ -1,0 +1,36 @@
+<%- include('../blocks/userheader') %>
+
+<section class="section about-me" data-section="section1">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Hello <%=name%></h2>
+       <div class="line-dec"></div>
+       </div>
+
+       <% if (pic!=undefined) 
+       { %>
+          <img src="/user/<%=pic%>">
+       <% }%>
+       
+
+       <table class='table'>
+         <tr>
+           <th>Name</th>
+           <th>Email</th>
+           <th>Group</th>
+         </tr>
+         <% users.forEach(rec=>
+         { %>
+
+            <tr>
+              <td><%=rec.name%></td>
+              <td><%=rec.email%></td>
+              <td><%=rec.group%></td>
+            </tr>
+
+        <% })%>
+       </table>
+    </div>   
+</section>
+
+<%- include('../blocks/footer') %>

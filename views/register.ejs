@@ -1,0 +1,93 @@
+<%- include('blocks/header') %>
+
+      
+
+
+      <section class="section contact-me" data-section="section4">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Register User</h2>
+            <div class="line-dec"></div>
+           
+          </div>
+          <div class="row">
+         
+              <div class="container">
+
+                <p class='alert'><%=msg%></p>
+
+                <form id="contact" action="/web/saveuser" method="post">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <fieldset>
+                        <input
+                          name="name"
+                          type="text"
+                          class="form-control"
+                          id="name"
+                          placeholder="Your name..."
+                          required=""
+                        />
+                      </fieldset>
+                    </div>
+                    <div class="col-md-6">
+                      <fieldset>
+                        <input
+                          name="email"
+                          type="text"
+                          class="form-control"
+                          id="email"
+                          placeholder="Your email..."
+                          required=""
+                        />
+                      </fieldset>
+                    </div>
+
+                    <div class="col-md-6">
+                        <fieldset>
+                          <input
+                            name="password"
+                            type="password"
+                            class="form-control"
+                            id="password"
+                            placeholder="Your password..."
+                            required=""
+                          />
+                        </fieldset>
+                      </div>
+                      <div class="col-md-6">
+                          <fieldset>
+                            <select
+                              name="group"
+                              class="form-control"
+                              id="group"
+                              required=""
+                            >
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            </select>
+                          </fieldset>
+                        </div>
+                    
+                    <div class="col-md-12">
+                      <fieldset>
+                        <button type="submit" id="form-submit" class="button">
+                          Register
+                        </button>
+                      </fieldset>
+                    </div>
+                  </div>
+                </form>
+              
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <%- include('blocks/footer') %>

@@ -1,0 +1,127 @@
+<%- include('../blocks/userheader') %>
+
+<section class="section about-me" data-section="section1">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Send Request</h2>
+       <div class="line-dec"></div>
+       </div>
+
+       <form id="contact" action="/user/saverequest"
+        method="post">
+        <div class="row">
+          <div class="col-md-6">
+            <fieldset>
+              <input
+                name="name"
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="Person name..."
+                required=""
+              />
+            </fieldset>
+          </div>
+          <div class="col-md-6">
+            <fieldset>
+              <input
+                name="phone"
+                type="text"
+                class="form-control"
+                id="phone"
+                placeholder="Phone..."
+                required=""
+              />
+            </fieldset>
+          </div>
+          <div class="col-md-6">
+            <fieldset>
+              <input
+                name="hospital"
+                type="text"
+                class="form-control"
+                id="hospital"
+                placeholder="Hospital name..."
+                required=""
+              />
+            </fieldset>
+          </div>
+          <div class="col-md-6">
+            <fieldset>
+              <select
+                name="group"
+                class="form-control"
+                id="group"
+                required=""
+              >
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+              <option>O+</option>
+              <option>O-</option>
+              <option>AB+</option>
+              <option>AB-</option>
+              </select>
+            </fieldset>
+          </div>
+      
+         
+          <div class="col-md-12">
+            <fieldset>
+              <button type="submit" id="form-submit" class="button">
+                Send Request
+              </button>
+            </fieldset>
+          </div>
+        </div>
+      </form>
+
+      <hr>
+      <h2>Your Request</h2>
+      <table class='table'>
+        <tr>
+            <th>Name</th>
+            <th>Hospital</th>
+            <th>Contact</th>
+            <th>Group</th>
+        </tr>
+        <% myreq.forEach(rec=>
+          { %>
+
+            <tr>
+              <td><%=rec.name%></td>
+              <td><%=rec.hospital%></td>
+              <td><%=rec.phone%></td>
+              <td><%=rec.group%></td>
+            </tr>
+
+          <% })%>
+      </table>
+
+
+      <h2>Other Request</h2>
+      <table class='table'>
+        <tr>
+            <th>Name</th>
+            <th>Hospital</th>
+            <th>Contact</th>
+            <th>Group</th>
+        </tr>
+        <% otherreq.forEach(rec=>
+          { %>
+
+            <tr>
+              <td><%=rec.name%></td>
+              <td><%=rec.hospital%></td>
+              <td><%=rec.phone%></td>
+              <td><%=rec.group%></td>
+            </tr>
+
+          <% })%>
+      </table>
+
+    </div>
+</section>       
+
+<%- include('../blocks/footer') %>
